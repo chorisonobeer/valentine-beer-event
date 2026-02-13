@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ビール詳細スペックリスト（画像付き）</title>
+    <style>
+        body {
+            font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+            font-size: 14px;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 1.5em;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        /* 列幅の調整 */
+        th:nth-child(1) { width: 40px; text-align: center; } /* No */
+        th:nth-child(2) { width: 150px; } /* Brewery */
+        th:nth-child(3) { width: 180px; } /* Beer Name */
+        th:nth-child(4) { width: 100px; } /* Region */
+        th:nth-child(5) { width: 120px; } /* Style */
+        th:nth-child(6) { width: 60px; } /* ABV */
+        th:nth-child(7) { width: 60px; } /* Vol */
+        th:nth-child(8) { width: auto; } /* Desc */
+        th:nth-child(9) { width: 120px; text-align: center; } /* Image */
+
+        .no-col { text-align: center; }
+        .brewery-col { font-weight: bold; color: #444; }
+        .name-col { font-weight: bold; color: #000; font-size: 1.05em; }
+        .region-col { color: #2c3e50; font-weight: 500; font-size: 0.9em; }
+        .style-col { font-style: italic; color: #555; font-size: 0.9em; }
+        .abv-col { text-align: right; white-space: nowrap;}
+        .vol-col { white-space: nowrap; }
+        .desc-col { font-size: 0.9em; line-height: 1.5; }
+        
+        /* 画像のスタイル（正方形トリミング） */
+        .img-cell {
+            text-align: center;
+            padding: 5px;
+        }
+        .beer-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover; /* これで正方形にトリミングされます */
+            border-radius: 4px;
+            border: 1px solid #eee;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+
+        .copy-note {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>入荷ビール詳細スペック一覧（全18種）</h1>
+
+    
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>醸造所 (Brewery)</th>
+                <th>商品名 (Beer Name)</th>
+                <th>国・地域</th>
+                <th>スタイル</th>
+                <th>ABV</th>
+                <th>容量</th>
+                <th>特徴・解説</th>
+                <th>商品画像</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 1 -->
+            <tr>
+                <td class="no-col">1</td>
+                <td class="brewery-col">Heller-Bräu Trum (Schlenkerla)</td>
+                <td class="name-col">Aecht Schlenkerla Rauchbier Urbock</td>
+                <td class="region-col">ドイツ</td>
+                <td class="style-col">Rauchbier / Bock</td>
+                <td class="abv-col">6.5%</td>
+                <td class="vol-col">500ml</td>
+                <td class="desc-col">バンベルクの名門。ブナの木で燻したモルトを100%使用した、秋冬限定の燻製ボックビール。濃厚で複雑な味わい。</td>
+                <td class="img-cell"><img src="https://www.arome.jp/upload/save_image/12261726_676d13491e276.jpg" alt="Urbock" class="beer-img"></td>
+            </tr>
+            <!-- 2 -->
+            <tr>
+                <td class="no-col">2</td>
+                <td class="brewery-col">Fremont Brewing</td>
+                <td class="name-col">The Rusty Nail</td>
+                <td class="region-col">アメリカ</td>
+                <td class="style-col">Imp. Oatmeal Stout (BA)</td>
+                <td class="abv-col">13-14%</td>
+                <td class="vol-col">650ml</td>
+                <td class="desc-col">シアトルの名作。リコリスとシナモンを使用したインペリアルオートミールスタウトを、12年熟成のバーボン樽で15ヶ月熟成。</td>
+                <td class="img-cell"><img src="https://s3-ap-northeast-1.amazonaws.com/public-my-beer-2/uploads/beer/image/26861/c384cc42-d7e8-41d7-9644-02529d3c805d.png" alt="Rusty Nail" class="beer-img"></td>
+            </tr>
+            <!-- 3 -->
+            <tr>
+                <td class="no-col">3</td>
+                <td class="brewery-col">平和酒造 (Heiwa Craft)</td>
+                <td class="name-col">Red Ale</td>
+                <td class="region-col">日本/和歌山</td>
+                <td class="style-col">American Amber / Red Ale</td>
+                <td class="abv-col">5.0%</td>
+                <td class="vol-col">330ml</td>
+                <td class="desc-col">麦芽とホップのみを使用。焙煎モルトではなく高温乾燥モルトを使用し、鮮やかな赤色とキャラメル感、上品な苦味を実現。</td>
+                <td class="img-cell"><img src="https://s3-ap-northeast-1.amazonaws.com/public-my-beer-2/uploads/beer/image/10706/186ff20c-28cb-4f84-884e-dd144daddf60.jpg" alt="Red Ale" class="beer-img"></td>
+            </tr>
+            <!-- 4 -->
+            <tr>
+                <td class="no-col">4</td>
+                <td class="brewery-col">Collective Arts Brewing</td>
+                <td class="name-col">Cherry Limeade Sour</td>
+                <td class="region-col">カナダ</td>
+                <td class="style-col">Sour - Fruited</td>
+                <td class="abv-col">6.2%</td>
+                <td class="vol-col">473ml</td>
+                <td class="desc-col">タルトチェリーとライムを使用した、爽快でクリスプなサワーエール。冬の重たいビールの合間に最適。</td>
+                <td class="img-cell"><img src="https://collectiveartscreativity.com/cdn/shop/files/2up_can_sour34_CDN_875x875_172fd218-f3b8-4a72-86bf-1738f0ed6f6d.png?v=1757959164" alt="Cherry Limeade" class="beer-img"></td>
+            </tr>
+            <!-- 5 -->
+            <tr>
+                <td class="no-col">5</td>
+                <td class="brewery-col">Sierra Nevada</td>
+                <td class="name-col">Pale Ale</td>
+                <td class="region-col">アメリカ</td>
+                <td class="style-col">Pale Ale</td>
+                <td class="abv-col">5.6%</td>
+                <td class="vol-col">355ml</td>
+                <td class="desc-col">クラフトビールの原点にして頂点。カスケードホップのグレープフルーツのような香りとモルトのバランスが完璧。</td>
+                <td class="img-cell"><img src="https://www.antenna-america.com/cdn/shop/files/PaleAle.png?v=1682411538" alt="Pale Ale" class="beer-img"></td>
+            </tr>
+            <!-- 6 -->
+            <tr>
+                <td class="no-col">6</td>
+                <td class="brewery-col">Firestone Walker</td>
+                <td class="name-col">Diesel Thunder</td>
+                <td class="region-col">アメリカ</td>
+                <td class="style-col">Double IPA</td>
+                <td class="abv-col">8.0%</td>
+                <td class="vol-col">355ml</td>
+                <td class="desc-col">Propagator Series限定品。Nelson、Citra、Columbus Cryoを使用。松脂のようなダンク感と強烈なアロマ。</td>
+                <td class="img-cell"><img src="https://www.antenna-america.com/cdn/shop/files/DieselThunderDoubleIPA_2.png?v=1769069620&width=1445" alt="Diesel Thunder" class="beer-img"></td>
+            </tr>
+            <!-- 7 -->
+            <tr>
+                <td class="no-col">7</td>
+                <td class="brewery-col">Burdock Brewery</td>
+                <td class="name-col">Tuesday</td>
+                <td class="region-col">カナダ</td>
+                <td class="style-col">Saison / Farmhouse Ale</td>
+                <td class="abv-col">5.3%</td>
+                <td class="vol-col">473ml</td>
+                <td class="desc-col">トロント。曜日シリーズのセゾン。パスタで有名な国の酵母を使用し、スパイシーでクローブのような香り。</td>
+                <td class="img-cell"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnaT8bkTNiBwiXmg4B-l6-yP5ozisDPE1Rbg&s" alt="Tuesday" class="beer-img"></td>
+            </tr>
+            <!-- 8 -->
+            <tr>
+                <td class="no-col">8</td>
+                <td class="brewery-col">Sierra Nevada</td>
+                <td class="name-col">Peachy Little Thing</td>
+                <td class="region-col">アメリカ</td>
+                <td class="style-col">Hazy IPA (Fruited)</td>
+                <td class="abv-col">7.0%</td>
+                <td class="vol-col">355ml</td>
+                <td class="desc-col">人気のLittle Thingシリーズ。ジューシーな桃とネクタリンのフレーバーが特徴のヘイジーIPA。</td>
+                <td class="img-cell"><img src="https://www.antenna-america.com/cdn/shop/files/PeachyLittleThing_2.png?v=1755853092" alt="Peachy Little Thing" class="beer-img"></td>
+            </tr>
+            <!-- 9 -->
+            <tr>
+                <td class="no-col">9</td>
+                <td class="brewery-col">ひみつビール (Himitsu Beer)</td>
+                <td class="name-col">らっこにひき (Rakko Nihiki)</td>
+                <td class="region-col">日本/三重</td>
+                <td class="style-col">DDH IPA</td>
+                <td class="abv-col">5.0%</td>
+                <td class="vol-col">350ml</td>
+                <td class="desc-col">伊勢角屋麦酒とのコラボレーション。ひみつビールのブルワーの古巣との共演。飲みやすいDDH IPA。</td>
+                <td class="img-cell"><img src="https://item-shopping.c.yimg.jp/i/n/sake-tadokoro_himitu-rakkonihiki_1_d_20251022171153" alt="らっこにひき" class="beer-img"></td>
+            </tr>
+            <!-- 10 -->
+            <tr>
+                <td class="no-col">10</td>
+                <td class="brewery-col">Schneider Weisse</td>
+                <td class="name-col">TAP6 Mein Aventinus</td>
+                <td class="region-col">ドイツ</td>
+                <td class="style-col">Weizenbock</td>
+                <td class="abv-col">8.2%</td>
+                <td class="vol-col">500ml</td>
+                <td class="desc-col">ヴァイツェンボックの世界的な指標。完熟バナナ、レーズン、プラムのような濃厚なアロマと深いコク。</td>
+                <td class="img-cell"><img src="https://m.media-amazon.com/images/I/71q6Aw-HBqL._AC_UF1000,1000_QL80_.jpg" alt="TAP6" class="beer-img"></td>
+            </tr>
+            <!-- 11 -->
+            <tr>
+                <td class="no-col">11</td>
+                <td class="brewery-col">Belching Beaver</td>
+                <td class="name-col">Peanut Butter Milk Stout</td>
+                <td class="region-col">アメリカ</td>
+                <td class="style-col">Milk Stout</td>
+                <td class="abv-col">5.3%</td>
+                <td class="vol-col">355ml</td>
+                <td class="desc-col">まるで飲むピーナッツバターカップ。ローストピーナッツ、チョコ、コーヒーのアロマに乳糖の甘み。</td>
+                <td class="img-cell"><img src="https://www.antenna-america.com/cdn/shop/products/PeanutButterMilkStout220411.png?v=1653352163" alt="Peanut Butter" class="beer-img"></td>
+            </tr>
+            <!-- 12 -->
+            <tr>
+                <td class="no-col">12</td>
+                <td class="brewery-col">ひみつビール (Himitsu Beer)</td>
+                <td class="name-col">プラリネ (Praline)</td>
+                <td class="region-col">日本/三重</td>
+                <td class="style-col">Stout / Decoration Beer</td>
+                <td class="abv-col">8.0%</td>
+                <td class="vol-col">350ml</td>
+                <td class="desc-col">チョコレート菓子「プラリネ」をイメージした濃厚なスタウト。デザートビールとして最適。</td>
+                <td class="img-cell"><img src="https://jizake-mie.jp/pic-labo/himitsu-193-3.jpg" alt="プラリネ" class="beer-img"></td>
+            </tr>
+            <!-- 13 -->
+            <tr>
+                <td class="no-col">13</td>
+                <td class="brewery-col">OUR BREWING</td>
+                <td class="name-col">Oat My Valentine</td>
+                <td class="region-col">日本/福井</td>
+                <td class="style-col">Oat Cream Stout</td>
+                <td class="abv-col">6.5%</td>
+                <td class="vol-col">350ml</td>
+                <td class="desc-col">バレンタイン限定醸造。オーツ麦と乳糖を使い、滑らかでクリーミーな口当たりに仕上げたスタウト。</td>
+                <td class="img-cell"><img src="https://ourbrewing.com/cdn/shop/files/IMG_07662.jpg?v=1767848304&width=533" alt="Oat My Valentine" class="beer-img"></td>
+            </tr>
+            <!-- 14 (Old 15) -->
+            <tr>
+                <td class="no-col">14</td>
+                <td class="brewery-col">Brasserie Knot</td>
+                <td class="name-col">WIND</td>
+                <td class="region-col">日本/北海道</td>
+                <td class="style-col">West Coast IPA</td>
+                <td class="abv-col">6.0%</td>
+                <td class="vol-col">350ml</td>
+                <td class="desc-col">鶴居村。ホップの柑橘系の爽やかな香りとキレのある苦味。飲み疲れしないドリンカビリティの高いIPA。</td>
+                <td class="img-cell"><img src="https://shop.r10s.jp/946kitchen/cabinet/kihon3/08514887/douto6.jpg" alt="WIND" class="beer-img"></td>
+            </tr>
+            <!-- 15 (Old 16) -->
+            <tr>
+                <td class="no-col">15</td>
+                <td class="brewery-col">CRAFT BEER BASE</td>
+                <td class="name-col">Lavender & Chamomile</td>
+                <td class="region-col">日本/大阪</td>
+                <td class="style-col">Herbed / Spiced Beer</td>
+                <td class="abv-col">5.0%</td>
+                <td class="vol-col">350ml</td>
+                <td class="desc-col">ハーブティーに使用するラベンダーとカモミールを麦汁に加え発酵。華やかなアロマとドライな飲み口。</td>
+                <td class="img-cell"><img src="https://baseec-img-mng.akamaized.net/images/item/origin/8408b3e9a3daf2f1f77e2538e2649581.png?imformat=generic" alt="Lavender" class="beer-img"></td>
+            </tr>
+            <!-- 16 (Old 17) -->
+            <tr>
+                <td class="no-col">16</td>
+                <td class="brewery-col">CRAFT BEER BASE</td>
+                <td class="name-col">BLONDE</td>
+                <td class="region-col">日本/大阪</td>
+                <td class="style-col">Blonde Ale</td>
+                <td class="abv-col">5.0%</td>
+                <td class="vol-col">350ml</td>
+                <td class="desc-col">麦芽の優しい甘みとホップの穏やかな苦味。どんな料理にも合わせやすい定番のゴールデンエール。</td>
+                <td class="img-cell"><img src="https://www.arome.jp/upload/save_image/11201050_691e73e7293d9.jpg" alt="BLONDE" class="beer-img"></td>
+            </tr>
+            <!-- 17 (Old 18) -->
+            <tr>
+                <td class="no-col">17</td>
+                <td class="brewery-col">Founders Brewing</td>
+                <td class="name-col">All Day IPA</td>
+                <td class="region-col">アメリカ</td>
+                <td class="style-col">Session IPA</td>
+                <td class="abv-col">4.7%</td>
+                <td class="vol-col">355ml</td>
+                <td class="desc-col">セッションIPAの金字塔。グレープフルーツのようなホップの香りと軽い飲み口で、一日中楽しめるIPA。</td>
+                <td class="img-cell"><img src="https://www.antenna-america.com/cdn/shop/files/All_Day_2024.png?v=1727142407&width=1445" alt="All Day IPA" class="beer-img"></td>
+            </tr>
+            <!-- 18 (Old 19) -->
+            <tr>
+                <td class="no-col">18</td>
+                <td class="brewery-col">Mountain River Brewery</td>
+                <td class="name-col">Table Saison</td>
+                <td class="region-col">日本/東京</td>
+                <td class="style-col">Saison</td>
+                <td class="abv-col">3.0%</td>
+                <td class="vol-col">330ml</td>
+                <td class="desc-col">久我山のマイクロブルワリー。アルコール度数を抑えた優しいセゾン。瓶内二次発酵による柔らかな炭酸が特徴。</td>
+                <td class="img-cell"><img src="https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260209-01045344-eipub-005-1-view.jpg?exp=10800" alt="Table Saison" class="beer-img"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+</div>
+
+</body>
+</html>
